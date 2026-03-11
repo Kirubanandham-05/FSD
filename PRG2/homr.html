@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Shopping Cart</title>
+</head>
+<body>
+    <div class="box">
+        <h1>Gadget Store</h1>
+
+        <div class="product">
+            Wireless Mouse - $20
+            <button onclick="addToCart('Wireless Mouse',20)">Add</button>
+        </div>
+
+        <div class="product">
+            Keyboard - $50
+            <button onclick="addToCart('Keyboard',50)">Add</button>
+        </div>
+
+        <h2>Your Cart</h2>
+        <ul id="cart"></ul>
+
+        <p>Total: $<span id="total">0</span></p>
+
+        <button onclick="clearCart()">Clear Cart</button>
+    </div>
+
+    <script src="hr.js"></script>
+</body>
+</html>
