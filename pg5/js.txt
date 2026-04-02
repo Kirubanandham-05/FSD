@@ -1,0 +1,53 @@
+// choose which bot style to use
+var botMode = "friendly"; // change to "formal" for the other style
+
+// attach event listener instead of inline onclick
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("send-btn").addEventListener("click", sndmsg);
+});
+
+function sndmsg(){
+    var ip = document.getElementById("message-input");
+    var msg = ip.value.trim(); 
+    if(msg === ""){
+        return;
+    }
+    var chatbox = document.getElementById("chatbox");
+
+    // user message
+    var umsg = document.createElement("div");
+    umsg.className = "message sent";
+    umsg.innerHTML = msg;
+    chatbox.appendChild(umsg);
+
+    ip.value = "";
+    chatbox.scrollTop = chatbox.scrollHeight;
+
+    // auto reply after 1 second
+    setTimeout(function(){
+        var reply = autoreply(msg, botMode);
+        if(reply){ 
+            var txtmsg = document.createElement("div");
+            txtmsg.className = "message receibved";
+            txtmsg.innerHTML = reply;
+            chatbox.appendChild(txtmsg);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+    }, 1000);
+}
+
+function autoreply(msg, mode){
+    msg = msg.toLowerCase();
+
+    if(mode === "friendly"){
+        if(msg.includes("hello")) return "Hey there! 👋 How’s it going?";
+        if(msg.includes("bye")) return "Catch you later, friend!";
+        return "Cool message 😎";
+    }
+
+    if(mode === "formal"){
+        if(msg.includes("hello")) return "Greetings. How may I assist you today?";
+        if(msg.includes("bye")) return "Farewell. Wishing you a pleasant day.";
+        return "Acknowledged. 💋";
+    }
+}
