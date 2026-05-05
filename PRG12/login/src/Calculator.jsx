@@ -35,3 +35,9 @@ function Calculator() {
 }
 
 export default Calculator;
+
+
+//To create 
+//npx create-react-app calculator
+//to run
+//npm start    

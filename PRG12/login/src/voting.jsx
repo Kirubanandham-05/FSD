@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  // Initialize votes as numbers
+
   const [vote, setVote] = useState({
      CandidateA: 0,
     dmk : 0,});
@@ -12,13 +12,7 @@ function App() {
       ...prevVot,
       [candidate]: prevVot[candidate] + 1,
     }));}
-    const Votha = (candidate) => {
-         setVote((prevVot) => ({
-      ...prevVot,
-      [candidate]: prevVot[candidate] +1,
-    }));
-
-  };
+    
 
   return (
     <div className="container">
@@ -32,7 +26,7 @@ function App() {
       <div>
         <h2>dmk</h2>
         <p>Votes: {vote.dmk}</p>
-        <button onClick={() => Vo("CandidateA")}>Vote</button>
+        <button onClick={() => Vo("dmk")}>Vote</button>
       </div>
     </div>
   );

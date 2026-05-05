@@ -12,7 +12,7 @@ const Student = mongoose.model("Student", {
 });
 app.get("/", async (req, res) => {
   const students = await Student.find();
-  let html = fs.readFileSync("./public/index.html", "utf8");
+  let html = fs.readFileSync("home.html", "utf8");
   let list = "<h2>Student List</h2><ul>";
   students.forEach(s => {
     list += `<li>
@@ -51,3 +51,12 @@ app.post("/update/:id", async (req, res) => {
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");
 });
+
+
+//To Run
+//node form.js
+
+//To Create New One
+//npm init -y
+//npm install express mongoose
+//node form.js
