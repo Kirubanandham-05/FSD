@@ -1,63 +1,52 @@
-<!DOCTYPE html>
 <html>
 <head>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;}
-.section{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  padding-top:80px;
-  color:#fff;
-  font-size:2rem;
-  text-align:center;
-}
-.nav{
-  position:fixed;
-  top:20px;
-  width:100%;
-  background:#333;
-  text-align:center;
-  padding:10px 0;
-}
+    
 
-.one{background:#EF5354;}
-.two{background:#E03B8B;}
-.three{background:#3944F7;}
-.four{background:#38CC77;}
+    .nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 60px;
+        background-color: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+       
+    }
+
+  
+
+    .section {
+        height: 100vh;          /* Full screen */
+        padding-top: 60px;      /* Prevent navbar overlap */
+       
+    }
+
+    #s1 { background-color: aqua; }
+    #s2 { background-color: yellow; }
+    #s3 { background-color: red; }
+    #s4 { background-color: blue; }
+
+    
 </style>
 </head>
 
 <body>
 
 <div class="nav">
-  <a href="#s1">SoC</a>
-  <a href="#s2">SoCS</a>
-  <a href="#s3">SoM</a>
-  <a href="#s4">SoSH</a>
+    <a href="#s1">1</a>
+    <a href="#s2">2</a>
+    <a href="#s3">3</a>
+    <a href="#s4">4</a>
 </div>
 
-<div id="s1" class="section one">
-  WELCOME TO SCHOOL OF COMMERCE<br>
-  B.Com, B.Com(CA)
-</div>
-
-<div id="s2" class="section two">
-  WELCOME TO SCHOOL OF COMPUTING SCIENCE<br>
-  BCA, B.Sc(CS)
-</div>
-
-<div id="s3" class="section three">
-  WELCOME TO SCHOOL OF MANAGEMENT<br>
-  BBA, MBA
-</div>
-
-<div id="s4" class="section four">
-  WELCOME TO SCHOOL OF SCIENCE & HUMANITIES<br>
-  BA, BSc(MAT)
-</div>
+<div class="section" id="s1">This is one</div>
+<div class="section" id="s2">This is two</div>
+<div class="section" id="s3">This is three</div>
+<div class="section" id="s4">This is four</div>
 
 </body>
 </html>

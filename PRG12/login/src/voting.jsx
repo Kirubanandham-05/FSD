@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 
 function App()  {
+  
    const [vote,setVote] = useState({
         CandidateA : 0,
         CandidateB : 0.
