@@ -1,35 +1,40 @@
 import './App.css';
 import { useState } from 'react';
 
-function App() {
+function App()  {
+   const [vote,setVote] = useState({
+        CandidateA : 0,
+        CandidateB : 0.
+    });
+    const Vot = (Candidate) => {
+        setVote({
+            ...vote,
+            [Candidate] : vote[Candidate] + 1
+        });
+    }
 
-  const [vote, setVote] = useState({
-     CandidateA: 0,
-    dmk : 0,});
+    return ( 
+        <>
 
-  const Vo = (candidate) => {
-    setVote((prevVot) => ({
-      ...prevVot,
-      [candidate]: prevVot[candidate] + 1,
-    }));}
-    
+        <div>
 
-  return (
-    <div className="container">
-      <h1>TN VOTING APPLICATION</h1>
-      <div>
-        <h2>TVK</h2>
-        <p>Votes: {vote.CandidateA}</p>
-        <button onClick={() => Vo("CandidateA")}>Vote</button>
-      </div>
-      <hr></hr>
-      <div>
-        <h2>dmk</h2>
-        <p>Votes: {vote.dmk}</p>
-        <button onClick={() => Vo("dmk")}>Vote</button>
-      </div>
-    </div>
-  );
+            <h2>TVK</h2>
+            <p>votes : {vote.CandidateA}</p>
+            <button onClick={() => Vot("CandidateA")}>Vote</button>
+            
+        </div>
+
+        <hr />
+
+
+
+        <div>
+            <h2>TVK india </h2>
+            <p>votes : {vote.CandidateB}</p>
+            <button onClick={() => Vot("CandidateB")}>VOTEEEEEE</button>
+            </div>
+            </>
+    )
 }
 
 export default App;
